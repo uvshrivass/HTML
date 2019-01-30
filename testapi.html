@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test Map API</title>
+
+    <script>
+   var options = {
+  enableHighAccuracy: true,
+  timeout: 5000,
+  maximumAge: 0
+};
+
+  function success(pos) {
+  var crd = pos.coords;
+
+  console.log('Your current position is:');
+  console.log(`Latitude : ${crd.latitude}`);
+  console.log(`Longitude: ${crd.longitude}`);
+  console.log(`More or less ${crd.accuracy} meters.`);
+
+  var lat = crd.latitude;
+  var lon = crd.longitude;
+  document.getElementById("lat").innerHTML= "Your latitude is:" + lat;
+  document.getElementById("lon").innerHTML= "Your longitude is:" + lon;
+  document.getElementById("map").href="https://www.google.com/maps/place/@{$lat},{$lon}";
+  document.getElementById("map1").src="https://www.google.com/maps/embed/v1/search?q={$lon}%2C{$lat}&key=AIzaSyBFuVLvmk9XAwwqEoq1E3nM-fiqO14y1h0"
+}
+
+function error(err) {
+  console.warn(`ERROR(${err.code}): ${err.message}`);
+}
+
+navigator.geolocation.getCurrentPosition(success, error, options);
+    </script>
+</head>
+<body>
+    <center>
+        <h1>
+            Your current location is <br>
+            <p id= "lat"></p>
+            <p id= "lon"></p>
+        </h1>
+        <a id = "map">Click to see map</a>
+        <iframe width="600" height="450" frameborder="0" style="border:0" id="map1" allowfullscreen></iframe>
+        
+    </center>
+    
+</body>
+</html>
