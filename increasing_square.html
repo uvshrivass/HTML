@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Increasing Square</title>
+
+    <script>
+        
+        function increase() {
+        var square = document.getElementById("square"); 
+        var screenwidth = screen.width;  
+        var w = 50;
+        var h = 50;
+        var timer = setInterval(watch, 3000);
+        
+        function watch() {
+            if (w >=screenwidth) {
+            clearInterval(timer);
+            } 
+            else {
+            w = w + 10; 
+            h = h + 10;
+            square.style.width = w + 'px';
+            square.style.height = h + 'px'; 
+            }
+        }   
+    }       
+    </script> 
+    
+</head>
+<body>
+    
+    <div id="square" style="width:50px; height: 50px; background-color: black;"></div>
+    <button type="button" onclick="increase()">Click Me!</button>
+
+</body>
+</html>
