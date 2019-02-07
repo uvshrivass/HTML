@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Loan Calculator</title>
+
+    <script>
+
+    function calloan() {
+    
+    var x = document.forms["loancal"];
+    var p = parseInt(x.elements[0].value);
+    var r = parseInt(x.elements[1].value);
+    var t = parseInt(x.elements[2].value);
+    var emi = (r*p)/(1-((1+r)**(-t)))
+    
+    
+    document.getElementById("loan").innerHTML = emi;
+    
+}
+     </script>
+
+</head>
+<body>
+    
+<div>
+
+    <div style="margin: auto; width: fit-content">
+            
+            <h2>Calculate the EMI on your loan.</h2>
+
+            <div style="margin: auto; width: fit-content">
+                
+                <form id="loancal" style= "border: 2px solid black; padding: 15px 15px 15px 15px;" onsubmit="return false">
+                    Enter the principle amount: <br><br>
+                    <input type="number"> <br><br>
+                    Enter the rate of interest: <br><br>
+                    <input type="number"> <br><br>
+                    Enter the time duration: <br><br>
+                    <input type="number"> <br><br>
+                    <button onclick='calloan()'>Click to calculate</button>
+                </form>
+
+                <h2>Your loan is:</h2>
+                <h2 id="loan" ></h2>
+                
+            </div>
+    </div>
+</div>         
+</body>
+</html>
