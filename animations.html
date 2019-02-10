@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS Animations</title>
+    <style>
+
+     #spinner1{
+         position:relative;
+         margin: 100px;
+     }
+
+     #sq2{
+         width: 100px;
+         height: 100px;
+         background-color: blue;
+         position: absolute;
+         top:25px;
+         left: 25px;
+         animation: turn 2s linear infinite
+     }
+
+     #sq1{
+         width: 150px;
+         height: 150px;
+         background-color: silver;
+         position: absolute;
+         animation: turn 3s linear infinite
+     }
+
+     @keyframes turn{
+         0%{
+             transform: rotate(0deg);
+         }
+         100%{
+             transform: rotate(360deg);
+         }
+     }
+           
+    </style>
+</head>
+<body>
+   <div id='spinner1'>
+        <div id='sq1'></div>
+        <div id='sq2'></div>
+   </div>
+    
+</body>
+</html>
