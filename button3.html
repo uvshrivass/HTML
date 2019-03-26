@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<style type="text/css">
+    button{
+            width: 150px;
+            height: 80px;
+            color: blueviolet;
+            border:none;
+            background-color: transparent;
+            margin: 20px;
+            cursor: pointer;
+            font-size: 1.5em;
+    
+    
+        }
+        #three{
+            position: relative;
+            transition: o.5s ease-out;
+        }
+        #three::after{
+            content: '';
+            position: absolute;
+            width:100%;
+            height: 0%;
+            background-color: blueviolet;
+            bottom:0;
+            left:0;
+            z-index: -1; 
+            transition: 0.5s ease-in-out;
+
+
+        }
+        #three:hover{
+            color:#fff;
+        }
+        #three:hover::after{
+            height: 100%;
+
+        }
+        </style>
+<body>
+    <button id="three">hover</button>
+</body>
+</html>
